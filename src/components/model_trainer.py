@@ -65,7 +65,7 @@ class ModelTrainer:
             predicted=best_model.predict(X_test)
             model_r2_score=r2_score(y_test, predicted)
 
-            return model_r2_score
+            return model_r2_score, best_model_name
 
         except Exception as e:
             raise CustomException(e, sys)

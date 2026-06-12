@@ -12,6 +12,12 @@ Predict a student's math exam score given inputs like gender, parental education
 
 ---
 
+## App Preview
+
+![Student Score Predictor UI](notebook/data/app_screenshot.png)
+
+---
+
 ## Architecture
 
 ```
@@ -41,17 +47,17 @@ User Input → Flask Web App → Prediction Pipeline → Predicted Score
 │   ├── logger.py                # Centralized logging
 │   └── utils.py                 # save/load object, model evaluation
 ├── artifacts/  
-│   ├── data.csv                 # Saved model.pkl & 
+│   ├── data.csv
 │   ├── train.csv
 │   ├── test.csv
 │   ├── preprocessor.pkl
-│   ├── model.pkl               
+│   └── model.pkl               
 ├── notebook/ 
-│   ├── data/   
-│   │   └── stud.csv             # student data
-├── templates/  
-│   │   └── home.html            # Flask HTML templates
-│   │   └── index.html                
+│   └── data/   
+│       └── stud.csv             # student data
+├── templates/                   # Flask app templates
+│   ├── home.html
+│   └── index.html              
 ├── app.py                       # Flask application
 ├── Dockerfile
 ├── requirements.txt
@@ -78,13 +84,21 @@ User Input → Flask Web App → Prediction Pipeline → Predicted Score
 
 Trained and compared using `GridSearchCV` (3-fold CV), scored by **R²**:
 
-- Linear Regression 
-- Random Forest Regressor
-- Decision Tree Regressor
-- Gradient Boosting Regressor
-- AdaBoost Regressor
+- Linear Regression
+- Random Forest
+- Decision Tree
+- Gradient Boosting
+- AdaBoost
 
 Best model and preprocessor are saved to `artifacts/` for inference.
+
+---
+
+## Results
+
+| Best Model | R² Score |
+|---|---|
+| Linear Regression | 0.88 |
 
 ---
 
